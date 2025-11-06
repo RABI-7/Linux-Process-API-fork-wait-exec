@@ -23,33 +23,6 @@ Test the C Program for the desired output.
 ## REG NO : 212224040257
 
 
-## C Program to print process ID and parent Process ID using Linux API system calls :
-```
-#include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
-int main(void)
-{	//variable to store calling function's process id
-	pid_t process_id;
-	//variable to store parent function's process id
-	pid_t p_process_id;
-	//getpid() - will return process id of calling function
-	process_id = getpid();
-	//getppid() - will return process id of parent function
-	p_process_id = getppid();
-	//printing the process ids
-
-//printing the process ids
-	printf("The process id: %d\n",process_id);
-	printf("The process id of parent function: %d\n",p_process_id);
-	return 0; }
-
-```
-## Output:
-![WhatsApp Image 2025-09-25 at 11 29 42_ddbdccbd](https://github.com/user-attachments/assets/2c763661-c18b-4a10-809d-000ca8409f1b)
-
-
-
 ## C Program to create new process using Linux API system calls fork() and exit() :
 ```
 //C Program to create new process using Linux API system calls fork() and exit()
