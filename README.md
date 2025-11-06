@@ -52,40 +52,34 @@ int main(void)
 
 ## C Program to create new process using Linux API system calls fork() and exit() :
 ```
+//C Program to create new process using Linux API system calls fork() and exit()
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 int main() {
-    int pid;
-    pid = fork();
-    if (pid == -1) {
-        perror("fork");
-        exit(EXIT_FAILURE);
+    int pid = fork();
+
+    if (pid == 0) { 
+        printf("I am child, my PID is %d\n", getpid()); 
+        printf("My parent PID is: %d\n", getppid()); 
+        sleep(2);  // Keep child alive for verification
+    } else { 
+        printf("I am parent, my PID is %d\n", getpid()); 
+        wait(NULL); 
     }
-    else if (pid == 0) {
-        printf("I am child, my pid is %d\n", getpid());
-        printf("My parent pid is: %d\n", getppid());
-        exit(EXIT_SUCCESS);
-    }
-    else {
-        printf("I am parent, my pid is %d\n", getpid());
-        sleep(100);
-        exit(EXIT_SUCCESS);
-    }
-    return 0;
 }
+
 ```
 ## output:
-![WhatsApp Image 2025-09-25 at 11 31 07_d16a8183](https://github.com/user-attachments/assets/305f1f91-8f12-47be-a716-70ecfacbbf38)
 
-
+![Alt text](img/1.png)
 
 
 ## C Program to execute Linux system commands using Linux API system calls exec() family :
 
 ```
-Program:
-
+//C Program to execute Linux system commands using Linux API system calls exec() family
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -132,9 +126,9 @@ int main() {
 
 
 ## OUTPUT:
-![WhatsApp Image 2025-09-25 at 11 35 45_02f0741b](https://github.com/user-attachments/assets/4da5b93a-7e6f-41f1-b0d5-df668965908d)
 
 
+![Alt text](img/2.png)
 
 
 # RESULT:
